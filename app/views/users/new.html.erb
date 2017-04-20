@@ -1,0 +1,12 @@
+<h1> REGISTER </h1>
+<form action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  First Name:<input type="text" name="user[first_name]"></input>
+  Last Name:<input type="text" name="user[last_name]"></input>
+  Email:<input type="text" name="user[email]"></input>
+  City:<input type="text" name="user[city]"></input>
+  State:<input type="text" name="user[state]"></input>
+  password: <input type="password" name="user[password]"></input>
+  confirm password: <input type="password" name="user[password_confirmation]"></input>
+  <input type="submit" value="Register"></input>
+</form>

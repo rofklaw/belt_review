@@ -1,0 +1,28 @@
+<h1> EVENTS </h1>
+
+<h2> LOCAL EVENTS </h2>
+<% @local.each do |l| %>
+  <h4><a href='/events/<%= l.id %>'><%= l.name %></a></h4>
+  <p>  <%= l.date %></p>
+  <p> <%= l.city %></p>
+  <p><a href='users/<%= l.user.id %>'> <%= l.user.first_name %></a></p>
+<% end %>
+
+<h2> OUT OF STATE </h2>
+<% @foreign.each do |f| %>
+  <h4><a href='/events/<%= f.id %>'> <%= f.name %></a> </h4>
+  <p> <%= f.date %></p>
+  <p> <%= f.city %> </p>
+  <p> <%= f.state %> </p>
+  <p><a href='users/<%= f.user.id %>'> <%= f.user.first_name %></a></p>
+<% end %>
+
+<h3> create a new event </h3>
+<form action="/events" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  Name:<input type="text" name="name"></input>
+  Date:<input type="text" name="date"></input>
+  City:<input type="text" name="city"></input>
+  State:<input type="text" name="state"></input>
+  <input type="submit" value="create"></input>
+</form>

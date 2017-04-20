@@ -1,0 +1,16 @@
+<h1><%= @event.name %> </h1>
+<p> <%= @event.date %> </p>
+<p> <%= @event.city %> </p>
+<p> <%= @event.state %> </p>
+<p> <%= @event.user.first_name %></p>
+
+<h3> GUESTS </h3>
+<% @attendees.each do |a| %>
+  <%= a.user.first_name %>
+<% end %>
+
+<% if @user.id == @event.user.id %>
+  <p> placeholder for destruction route </p>
+<% else %>
+  <a href="atendees/<%= @event.id %>" data-method ="post"> Join Event </a>
+<% end %>

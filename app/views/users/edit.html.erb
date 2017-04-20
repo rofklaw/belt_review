@@ -1,0 +1,13 @@
+<h1> EDIT YOUR SHIT</h1>
+<form action="/users" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  First Name:<input type="text" name="user[first_name]">
+  Last Name:<input type="text" name="user[last_name]">
+  Email:<input type="text" name="user[email]">
+  City:<input type="text" name="user[city]">
+  State:<input type="text" name="user[state]">
+  password<input type="password" name="user[password]">
+  confirm password<input type="password" name="user[password_confirmation]">
+  <input type="submit" value="Register">
+</form>
